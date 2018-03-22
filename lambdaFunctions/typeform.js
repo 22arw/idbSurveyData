@@ -34,13 +34,24 @@ exports.handler = function(event, context, callback) {
         })
       }
       
-      getUrl(typeformURL).then((rawData) => { 
+    //   getUrl(typeformURL).then((rawData) => { 
+    //     const data = JSON.parse(rawData)
+    //     console.log(data)
+    //   }).catch(console.error)
+
+    getUrl(typeformURL).then((rawData) => { 
         const data = JSON.parse(rawData)
         console.log(data)
+
+        callback(null, {
+            statusCode: 200,
+            body: data
+        });
+
       }).catch(console.error)
 
-    callback(null, {
-        statusCode: 200,
-        body: "Hello, World"
-    });
+    // callback(null, {
+    //     statusCode: 200,
+    //     body: "Hello, World"
+    // });
 }
