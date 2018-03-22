@@ -1,4 +1,5 @@
-const axios = require('axios');
+// const axios = require('axios');
+// const http = require('http');
 
 exports.handler = function(event, context, callback) {
 
@@ -8,16 +9,16 @@ exports.handler = function(event, context, callback) {
 
     typeformURL = baseURL + 'forms/' + formID + '/responses';
 
-    axios.get(typeformURL)
-        .then(function(response) {
-            console.log(response.data);
-            console.log(response.status);
-            console.log(response.statusText);
-            console.log(response.headers);
-            console.log(response.config);
-        }).catch(error => {
-            console.log(error);
-        });
+    // axios.get(typeformURL)
+    //     .then(function(response) {
+    //         console.log(response.data);
+    //         console.log(response.status);
+    //         console.log(response.statusText);
+    //         console.log(response.headers);
+    //         console.log(response.config);
+    //     }).catch(error => {
+    //         console.log(error);
+    //     });
    
 
     callback(null, {
