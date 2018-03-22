@@ -12,25 +12,30 @@ exports.handler = function(event, context, callback) {
 
     function getUrl (url) {
         return new Promise((resolve, reject) => {
-          https.get(url, (res) => {
-              if (res.statusCode !== 200) {
-                console.error('failed to fetch '+url)
-                res.resume()
-                reject()
-                return
-              }
+          const req = https.request(url, (res) => {
+            if (res.statusCode !== 200) {
+              res.resume()
+              reject('failed to fetch '+url)
+              return
+            }
       
-              res.setEncoding('utf8')
-              let rawData = ''
-              res.on('data', (chunk) => { rawData += chunk; })
-              res.on('end', () => {
-                resolve(rawData)
-              })
+            res.setEncoding('utf8')
+            let rawData = ''
+            res.on('data', (chunk) => { rawData += chunk; })
+            res.on('end', () => {
+              resolve(rawData)
+            })
           })
+          req.on('error', console.error)
+          req.setHeader('authorization', 'bearer' + accessToken)
+          req.end()
         })
       }
       
-      getUrl(typeformURL).then((data) => { console.log(data) }).catch(console.error)
+      getUrl(typeformURL).then((rawData) => { 
+        const data = JSON.parse(rawData)
+        console.log(data)
+      }).catch(console.error)
 
     callback(null, {
         statusCode: 200,
