@@ -11,6 +11,6 @@ $(function() {
       });
 
       function success(resp) {
-          document.getElementById('data').innerHTML(resp);
+          document.getElementById('data').innerHTML = resp;
       }
 });
