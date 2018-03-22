@@ -28,6 +28,7 @@ $(function() {
     //   });
 
       function success(resp) {
-          console.log(data);
+          console.log('Response received from typeform.');
+          data = resp;
       }
 });
