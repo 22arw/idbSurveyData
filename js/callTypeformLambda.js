@@ -1,3 +1,5 @@
+const data = '';
+
 $(function() {
 
     async function getData(url) {
@@ -26,6 +28,6 @@ $(function() {
     //   });
 
       function success(resp) {
-          document.getElementById('data').innerText = resp;
+          console.log(data);
       }
 });
