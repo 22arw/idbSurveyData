@@ -27,15 +27,15 @@ $(function() {
     //     }
     //   });
 
-      function success(resp) {
-          console.log('Response received from typeform.');
-          parseJSON(data);
-
-      }
+    function success(resp) {
+        console.log('Response received from typeform.');
+        data = JSON.parse(data);
+        calcData(data);
+    }
 });
 
-function parseJSON(data) {
-    document.getElementById('data').innerText = get.totalItems();
+function calcData(data) {
+    document.getElementById('data').innerText = 'Number of items: ' + get.totalItems();
 }
 
 const get = {
