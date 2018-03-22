@@ -6,7 +6,7 @@ exports.handler = function(event, context, callback) {
     formID = 'ue4FsQ';
     accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
 
-    typeformURL = baseURL + 'forms/{' + formID + '}/responses';
+    typeformURL = baseURL + 'forms/' + formID + '/responses';
 
     console.log(typeformURL);
 
