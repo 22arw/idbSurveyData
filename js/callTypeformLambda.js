@@ -35,5 +35,11 @@ $(function() {
 });
 
 function parseJSON(data) {
-    console.log('Here is the data: ' + data);
+    document.getElementById('data').innerText = get.totalItems();
+}
+
+const get = {
+    totalItems: function() {
+        return data.total_items;
+    }
 }
