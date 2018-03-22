@@ -5,8 +5,9 @@ exports.handler = function(event, context, callback) {
     baseURL = 'https://api.typeform.com/';
     formID = 'ue4FsQ';
     accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
+    page_size = 'page_size=1000';
 
-    typeformURL = baseURL + 'forms/' + formID + '/responses';
+    typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size;
 
     console.log(typeformURL);
 
