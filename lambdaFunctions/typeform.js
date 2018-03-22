@@ -1,5 +1,4 @@
-const axios = require('axios');
-// const http = require('http');
+const http = require('http');
 
 exports.handler = function(event, context, callback) {
 
@@ -11,16 +10,29 @@ exports.handler = function(event, context, callback) {
 
 
 
-    // axios.get(typeformURL)
-    //     .then(function(response) {
-    //         console.log(response.data);
-    //         console.log(response.status);
-    //         console.log(response.statusText);
-    //         console.log(response.headers);
-    //         console.log(response.config);
-    //     }).catch(error => {
-    //         console.log(error);
-    //     });
+    function getUrl (url) {
+        return new Promise((resolve, reject) => {
+          https.get(url, (res) => {
+              if (res.statusCode !== 200) {
+                console.error('failed to fetch '+url)
+                res.resume()
+                reject()
+                return
+              }
+      
+              res.setEncoding('utf8')
+              let rawData = ''
+              res.on('data', (chunk) => { rawData += chunk; })
+              res.on('end', () => {
+                resolve(rawData)
+              })
+          })
+        })
+      }
+      
+      getUrl(typeformURL).then((data) => {
+          console.log(data);
+      })
    
 
     callback(null, {
