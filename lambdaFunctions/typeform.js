@@ -1,4 +1,4 @@
-const http = require('http');
+const https = require('https');
 
 exports.handler = function(event, context, callback) {
 
@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
 
     typeformURL = baseURL + 'forms/' + formID + '/responses';
 
-
+    console.log(typeformURL);
 
     function getUrl (url) {
         return new Promise((resolve, reject) => {
@@ -30,10 +30,7 @@ exports.handler = function(event, context, callback) {
         })
       }
       
-      getUrl(typeformURL).then((data) => {
-          console.log(data);
-      })
-   
+      getUrl(typeformURL).then((data) => { console.log(data) }).catch(console.error)
 
     callback(null, {
         statusCode: 200,
