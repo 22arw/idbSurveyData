@@ -1,5 +1,5 @@
-// const axios = require('axios');
-const http = require('http');
+const axios = require('axios');
+// const http = require('http');
 
 exports.handler = function(event, context, callback) {
 
@@ -8,6 +8,8 @@ exports.handler = function(event, context, callback) {
     accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
 
     typeformURL = baseURL + 'forms/' + formID + '/responses';
+
+
 
     // axios.get(typeformURL)
     //     .then(function(response) {
