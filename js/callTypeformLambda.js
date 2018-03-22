@@ -29,6 +29,11 @@ $(function() {
 
       function success(resp) {
           console.log('Response received from typeform.');
-          data = resp;
+          parseJSON(data);
+
       }
 });
+
+function parseJSON(data) {
+    console.log('Here is the data: ' + data);
+}
