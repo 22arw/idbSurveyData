@@ -27,8 +27,8 @@ exports.handler = function(event, context, callback) {
             })
           })
           req.on('error', console.error)
-        //   req.setHeader('authorization', 'bearer' + accessToken)
-        req.setHeader('authorization', accessToken)
+          req.setHeader('authorization', 'bearer ' + accessToken)
+        // req.setHeader('authorization', accessToken)
 
           req.end()
         })
