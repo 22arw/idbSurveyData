@@ -12,7 +12,7 @@ $(function() {
                 success(resp);
             }
           });
-        success(dataset);
+        // success(dataset);
     }
 
     getData('/.netlify/functions/typeform');
