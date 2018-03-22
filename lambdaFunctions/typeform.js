@@ -7,7 +7,7 @@ exports.handler = function(event, context, callback) {
     accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
     page_size = 'page_size=1000';
 
-    typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size;
+    typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size + '&completed=true';
 
     console.log(typeformURL);
 
