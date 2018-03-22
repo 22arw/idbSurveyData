@@ -2,7 +2,7 @@ $(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://wizardly-bose-2e74c3.netlify.com/.netlify/functions/typeform',
+        url: '/.netlify/functions/typeform',
         data: {},
         success: function(resp){
             data = resp;
@@ -11,6 +11,6 @@ $(function() {
       });
 
       function success(resp) {
-          alert(resp);
+          document.getElementById('data').innerHTML(resp);
       }
 });
