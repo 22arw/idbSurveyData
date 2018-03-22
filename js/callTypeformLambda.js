@@ -15,16 +15,15 @@ $(function() {
 
     getData('/.netlify/functions/typeform');
 
-
-    $.ajax({
-        type: 'GET',
-        url: '/.netlify/functions/typeform',
-        data: {},
-        success: function(resp){
-            data = resp;
-            success(resp);
-        }
-      });
+    // $.ajax({
+    //     type: 'GET',
+    //     url: '/.netlify/functions/typeform',
+    //     data: {},
+    //     success: function(resp){
+    //         data = resp;
+    //         success(resp);
+    //     }
+    //   });
 
       function success(resp) {
           document.getElementById('data').innerText = resp;
