@@ -54,6 +54,7 @@ $(function() {
     function success(resp) {
         console.log('Response received from typeform.');
         DATA = JSON.parse(resp);
+        begin();
     }
 });
 
@@ -216,15 +217,17 @@ const get = {
     }
 }
 
-console.log('the number of items: ' + get.totalResponses());
-console.log('Q1: ' + get.q1AnswerChoices());
-console.log('Q2: ' + get.q2AnswerChoices());
-console.log('Q3: ' + get.q3AnswerChoices());
-console.log('Q4: ' + get.q4AnswerChoices());
-console.log('Q1 answer count: ' + get.q1AnswerCount());
-console.log('Q2 answer count: ' + get.q2AnswerCount());
-console.log('Q3 answer count: ' + get.q3AnswerCount());
-console.log('Q4 answer count: ' + get.q4AnswerCount());
+function begin() {
+    console.log('the number of items: ' + get.totalResponses());
+    console.log('Q1: ' + get.q1AnswerChoices());
+    console.log('Q2: ' + get.q2AnswerChoices());
+    console.log('Q3: ' + get.q3AnswerChoices());
+    console.log('Q4: ' + get.q4AnswerChoices());
+    console.log('Q1 answer count: ' + get.q1AnswerCount());
+    console.log('Q2 answer count: ' + get.q2AnswerCount());
+    console.log('Q3 answer count: ' + get.q3AnswerCount());
+    console.log('Q4 answer count: ' + get.q4AnswerCount());
+}
 
 const q = {
     count: (q) => {
