@@ -4,6 +4,163 @@ layout: default
 
 <div class="home">
 
-  <div id="data"></div>
+  <canvas id="q1"></canvas>
+  <div id='q1Other' style="text-align: center;"></div>
+  <hr><br><br><br>
+  <canvas id="q2"></canvas>
+  <hr><br><br><br>
+  <canvas id="q3"></canvas>
+  <div id='q3Other' style="text-align: center;"></div>
+  <hr><br><br><br>
+  <canvas id="q4"></canvas>
+  <div id='q4Other' style="text-align: center;"></div>
+  <hr><br><br><br>
 
 </div>
+
+<script>
+  var ctx = document.getElementById("q1").getContext('2d');
+  var otherAns = document.getElementById("q1Other");
+
+  var TOTAL = get.totalResponses();
+  var LABELS = get.q1AnswerChoices();
+  var DATASET = q.count(1);
+  var OTHER = q.other(1);
+
+  var myChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+          labels: LABELS,
+          datasets: [{
+              label: 'Why did you join the military?',
+              data: DATASET,
+              backgroundColor: [],
+              borderColor: [],
+              borderWidth: 0
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+function addOther() {
+  let html = "<h2>Other Responses:</h2>";
+  OTHER.forEach((el) => {
+    html += "<p>\"" + el + "\"</p>";
+  });
+  otherAns.innerHTML = html;
+}
+
+addOther();
+
+</script>
+
+
+<script>
+  ctx = document.getElementById("q2").getContext('2d');
+
+  LABELS = get.q2AnswerChoices();
+  DATASET = q.count(2);
+
+  var myChart2 = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+          labels: LABELS,
+          datasets: [{
+              label: 'How much time do you have left on your enlistment?',
+              data: DATASET,
+              backgroundColor: [],
+              borderColor: [],
+              borderWidth: 0
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+</script>
+
+
+<script>
+  ctx = document.getElementById("q3").getContext('2d');
+  otherAns = document.getElementById("q3Other");
+
+  LABELS = get.q3AnswerChoices();
+  DATASET = q.count(3);
+  OTHER = q.other(3);
+
+  var myChart3 = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+          labels: LABELS,
+          datasets: [{
+              label: 'Why are you separating from the military?',
+              data: DATASET,
+              backgroundColor: [],
+              borderColor: [],
+              borderWidth: 0
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+addOther();
+
+</script>
+
+<script>
+  ctx = document.getElementById("q4").getContext('2d');
+  otherAns = document.getElementById("q4Other");
+
+  LABELS = get.q4AnswerChoices();
+  DATASET = q.count(4);
+  OTHER = q.other(4);
+
+  var myChart4 = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+          labels: LABELS,
+          datasets: [{
+              label: 'Why are you staying in the military?',
+              data: DATASET,
+              backgroundColor: [],
+              borderColor: [],
+              borderWidth: 0
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+addOther();
+
+</script>

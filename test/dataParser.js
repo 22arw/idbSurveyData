@@ -13,16 +13,12 @@ id: CIopzf7otWN6
 
 */
 
-
-var DATA = '';
-const lambdaURL = '/.netlify/functions/typeform';
+const DATA = typeform;
 const Q1ID = 'S0i1qDAxfMrN';
 const Q2ID = 'P1jzxhwfWL0D';
 const Q3ID = 'FSXFvUeeD1aG';
 const Q4ID = 'CIopzf7otWN6';
 
-
-// unique function for setting up an array.
 Array.prototype.unique = function() {
     var a = this.concat();
     for (var i = 0; i < a.length; ++i) {
@@ -33,30 +29,6 @@ Array.prototype.unique = function() {
     }
     return a;
 };
-
-// Where it all begins!
-$(function() {
-
-    async function getData(url) {
-        const dataset = await $.ajax({
-            type: 'GET',
-            url: url,
-            data: {},
-            success: function(resp){
-                DATA = resp;
-                success(resp);
-            }
-          });
-    }
-
-    getData(lambdaURL);
-
-    function success(resp) {
-        console.log('Response received from typeform.');
-        data = JSON.parse(data);
-        begin(data);
-    }
-});
 
 const get = {
     totalResponses: () => {
