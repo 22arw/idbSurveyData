@@ -17,7 +17,7 @@ exports.handler = function(event, context, callback) {
       const req = https.request(url, (res) => {
         if (res.statusCode !== 200) {
           res.resume()
-          reject('failed to fetch '+url)
+          reject('failed to fetch ' + url)
           return
         }
   
@@ -41,7 +41,7 @@ exports.handler = function(event, context, callback) {
 
     callback(null, {
         statusCode: 200,
-        body: data
+        body: rawData
     });
 
   }).catch(console.error)
