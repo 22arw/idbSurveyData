@@ -64,103 +64,109 @@ function addOther() {
 
 
 <script>
-  ctx = document.getElementById("q2").getContext('2d');
+    function q2Chart() {
+        ctx = document.getElementById("q2").getContext('2d');
 
-  LABELS = get.q2AnswerChoices();
-  DATASET = q.count(2);
+        LABELS = get.q2AnswerChoices();
+        DATASET = q.count(2);
 
-  var myChart2 = new Chart(ctx, {
-      type: 'horizontalBar',
-      data: {
-          labels: LABELS,
-          datasets: [{
-              label: 'How much time do you have left on your enlistment?',
-              data: DATASET,
-              backgroundColor: [],
-              borderColor: [],
-              borderWidth: 0
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
-  });
+        var myChart2 = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: LABELS,
+                datasets: [{
+                    label: 'How much time do you have left on your enlistment?',
+                    data: DATASET,
+                    backgroundColor: [],
+                    borderColor: [],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+    }
 
 </script>
 
 
 <script>
-  ctx = document.getElementById("q3").getContext('2d');
-  otherAns = document.getElementById("q3Other");
+    function q3Chart() {
+        ctx = document.getElementById("q3").getContext('2d');
+        otherAns = document.getElementById("q3Other");
 
-  LABELS = get.q3AnswerChoices();
-  DATASET = q.count(3);
-  OTHER = q.other(3);
+        LABELS = get.q3AnswerChoices();
+        DATASET = q.count(3);
+        OTHER = q.other(3);
 
-  var myChart3 = new Chart(ctx, {
-      type: 'horizontalBar',
-      data: {
-          labels: LABELS,
-          datasets: [{
-              label: 'Why are you separating from the military?',
-              data: DATASET,
-              backgroundColor: [],
-              borderColor: [],
-              borderWidth: 0
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
-  });
+        var myChart3 = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: LABELS,
+                datasets: [{
+                    label: 'Why are you separating from the military?',
+                    data: DATASET,
+                    backgroundColor: [],
+                    borderColor: [],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
 
-addOther();
+        addOther();
+    }
 
 </script>
 
 <script>
-  ctx = document.getElementById("q4").getContext('2d');
-  otherAns = document.getElementById("q4Other");
+    function q4Chart() {
+        ctx = document.getElementById("q4").getContext('2d');
+        otherAns = document.getElementById("q4Other");
 
-  LABELS = get.q4AnswerChoices();
-  DATASET = q.count(4);
-  OTHER = q.other(4);
+        LABELS = get.q4AnswerChoices();
+        DATASET = q.count(4);
+        OTHER = q.other(4);
 
-  var myChart4 = new Chart(ctx, {
-      type: 'horizontalBar',
-      data: {
-          labels: LABELS,
-          datasets: [{
-              label: 'Why are you staying in the military?',
-              data: DATASET,
-              backgroundColor: [],
-              borderColor: [],
-              borderWidth: 0
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
-  });
+        var myChart4 = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: LABELS,
+                datasets: [{
+                    label: 'Why are you staying in the military?',
+                    data: DATASET,
+                    backgroundColor: [],
+                    borderColor: [],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
 
-addOther();
+        addOther();
+    }
 
 </script>

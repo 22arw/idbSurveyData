@@ -229,6 +229,9 @@ function begin() {
     console.log('Q4 answer count: ' + get.q4AnswerCount());
 
     q1Chart();
+    q2Chart();
+    q3Chart();
+    q4Chart();
 }
 
 const q = {
