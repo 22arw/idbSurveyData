@@ -53,7 +53,7 @@ $(function() {
 
     function success(resp) {
         console.log('Response received from typeform.');
-        DATA = JSON.parse(DATA);
+        DATA = JSON.parse(resp);
     }
 });
 
