@@ -1,58 +1,49 @@
 const https = require('https');
 
+var baseURL = 'https://api.typeform.com/';
+var formID = 'ue4FsQ';
+var accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
+var page_size = 'page_size=1000';
+
+var typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size + '&completed=true';
+
 exports.handler = function(event, context, callback) {
 
-    baseURL = 'https://api.typeform.com/';
-    formID = 'ue4FsQ';
-    accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
-    page_size = 'page_size=1000';
 
-    typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size + '&completed=true';
+  console.log(typeformURL);
 
-    console.log(typeformURL);
-
-    function getUrl (url) {
-        return new Promise((resolve, reject) => {
-          const req = https.request(url, (res) => {
-            if (res.statusCode !== 200) {
-              res.resume()
-              reject('failed to fetch '+url)
-              return
-            }
-      
-            res.setEncoding('utf8')
-            let rawData = ''
-            res.on('data', (chunk) => { rawData += chunk; })
-            res.on('end', () => {
-              resolve(rawData)
-            })
-          })
-          req.on('error', console.error)
-          req.setHeader('authorization', 'bearer ' + accessToken)
-        // req.setHeader('authorization', accessToken)
-
-          req.end()
+  function getUrl (url) {
+    return new Promise((resolve, reject) => {
+      const req = https.request(url, (res) => {
+        if (res.statusCode !== 200) {
+          res.resume()
+          reject('failed to fetch '+url)
+          return
+        }
+  
+        res.setEncoding('utf8')
+        let rawData = ''
+        res.on('data', (chunk) => { rawData += chunk; })
+        res.on('end', () => {
+          resolve(rawData)
         })
-      }
-      
-    //   getUrl(typeformURL).then((rawData) => { 
-    //     const data = JSON.parse(rawData)
-    //     console.log(data)
-    //   }).catch(console.error)
+      })
+      req.on('error', console.error)
+      req.setHeader('authorization', 'bearer ' + accessToken)
 
-    getUrl(typeformURL).then((rawData) => { 
-        const data = JSON.parse(rawData)
-        console.log(data)
+      req.end()
+    })
+  }
 
-        callback(null, {
-            statusCode: 200,
-            body: rawData
-        });
+  getUrl(typeformURL).then((rawData) => { 
+    const data = JSON.parse(rawData)
+    console.log(data)
 
-      }).catch(console.error)
+    callback(null, {
+        statusCode: 200,
+        body: data
+    });
 
-    // callback(null, {
-    //     statusCode: 200,
-    //     body: "Hello, World"
-    // });
+  }).catch(console.error)
 }
+

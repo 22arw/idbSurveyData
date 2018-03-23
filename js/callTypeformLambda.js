@@ -39,7 +39,25 @@ function calcData(data) {
 }
 
 const get = {
-    totalItems: function() {
+    totalItems: () => {
         return data.total_items;
+    },
+    q1Answers: () => {
+        // perform a for loop generating a list of answers chosen added to an array.
     }
 }
+
+/*
+Why did you join the military?
+id: S0i1qDAxfMrN
+
+How much time do you have left on your enlistment? 
+id: P1jzxhwfWL0D
+
+Why are you separating from the military?
+id: FSXFvUeeD1aG
+
+Why are you staying in the military?
+id: CIopzf7otWN6
+
+*/
