@@ -10,7 +10,8 @@ $(function() {
             success: function(resp){
                 data = resp;
                 success(resp);
-            }
+            },
+            dataType: 'json'
           });
         // success(dataset);
     }
@@ -29,7 +30,7 @@ $(function() {
 
     function success(resp) {
         console.log('Response received from typeform.');
-        data = JSON.parse(data);
+        // data = JSON.parse(data);
         calcData(data);
     }
 });
