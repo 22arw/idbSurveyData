@@ -10,8 +10,7 @@ $(function() {
             success: function(resp){
                 data = resp;
                 success(resp);
-            },
-            dataType: 'json'
+            }
           });
         // success(dataset);
     }
