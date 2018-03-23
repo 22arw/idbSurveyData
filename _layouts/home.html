@@ -19,9 +19,10 @@ layout: default
 </div>
 
 <script>
+    var otherAns;
     function q1Chart() {
         var ctx = document.getElementById("q1").getContext('2d');
-        var otherAns = document.getElementById("q1Other");
+        otherAns = document.getElementById("q1Other");
 
         var TOTAL = get.totalResponses();
         var LABELS = get.q1AnswerChoices();
