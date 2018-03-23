@@ -19,37 +19,38 @@ layout: default
 </div>
 
 <script>
-  var ctx = document.getElementById("q1").getContext('2d');
-  var otherAns = document.getElementById("q1Other");
+    function q1Chart() {
+        var ctx = document.getElementById("q1").getContext('2d');
+        var otherAns = document.getElementById("q1Other");
 
-  var TOTAL = get.totalResponses();
-  var LABELS = get.q1AnswerChoices();
-  var DATASET = q.count(1);
-  var OTHER = q.other(1);
+        var TOTAL = get.totalResponses();
+        var LABELS = get.q1AnswerChoices();
+        var DATASET = q.count(1);
+        var OTHER = q.other(1);
 
-  var myChart = new Chart(ctx, {
-      type: 'horizontalBar',
-      data: {
-          labels: LABELS,
-          datasets: [{
-              label: 'Why did you join the military?',
-              data: DATASET,
-              backgroundColor: [],
-              borderColor: [],
-              borderWidth: 0
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
-  });
-
+        var myChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: LABELS,
+                datasets: [{
+                    label: 'Why did you join the military?',
+                    data: DATASET,
+                    backgroundColor: [],
+                    borderColor: [],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+    }
 function addOther() {
   let html = "<h2>Other Responses:</h2>";
   OTHER.forEach((el) => {
