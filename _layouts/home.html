@@ -53,11 +53,13 @@ layout: default
         });
         addOther(q.other(1));
     }
+
 function addOther(OTHER) {
-  let html = "<h3>Other Responses:</h3>";
+  let html = "<h3>Other Responses:</h3><ul>";
   OTHER.forEach((el) => {
-    html += "<p>\"" + el + "\"</p>";
+    html += "<li>\"" + el + "\"</li>";
   });
+  html += "</ul>"
   otherAns.innerHTML = html;
 }
 
