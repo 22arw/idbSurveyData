@@ -6,15 +6,15 @@ layout: default
 
   <canvas id="q1"></canvas>
   <div id='q1Other' style="text-align: center;"></div>
-  <hr><br><br><br>
+  <br><br><br><hr><br><br><br>
   <canvas id="q2"></canvas>
-  <hr><br><br><br>
+  <br><br><br><hr><br><br><br>
   <canvas id="q3"></canvas>
   <div id='q3Other' style="text-align: center;"></div>
-  <hr><br><br><br>
+  <br><br><br><hr><br><br><br>
   <canvas id="q4"></canvas>
   <div id='q4Other' style="text-align: center;"></div>
-  <hr><br><br><br>
+  <br><br><br><hr><br><br><br>
 
 </div>
 
@@ -54,7 +54,7 @@ layout: default
         addOther(q.other(1));
     }
 function addOther(OTHER) {
-  let html = "<h2>Other Responses:</h2>";
+  let html = "<h3>Other Responses:</h3>";
   OTHER.forEach((el) => {
     html += "<p>\"" + el + "\"</p>";
   });
