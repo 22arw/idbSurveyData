@@ -232,6 +232,7 @@ function begin() {
     q2Chart();
     q3Chart();
     q4Chart();
+    setHeaderData();
 }
 
 const q = {
@@ -291,4 +292,9 @@ const q = {
                 console.log('Something went wrong when you called q.other(' + q + ')');
         }
     }
+}
+
+function setHeaderData() {
+    let headerDataText = '<p>Survey Responses: ';
+    document.getElementById('headerData').innerHTML = headerDataText + get.totalResponses() + '</p>';
 }
