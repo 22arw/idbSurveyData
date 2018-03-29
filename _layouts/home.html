@@ -55,14 +55,28 @@ layout: default
         addOther(q.other(1).unique());
     }
 
+var id = 1;
+
 function addOther(OTHER) {
-  let html = "<h3>Other Responses:</h3><ul>";
+
+    let html = `
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#other${id}" aria-expanded="false" aria-controls="other${id}">
+    Other Responses
+    </button>
+    <div class="collapse" id="other${id}">
+        <div class="card card-body">
+            <ul>`
+//   let html = "<h3>Other Responses:</h3><ul>";
   OTHER.forEach((el) => {
     html += "<li>\"" + el + "\"</li>";
   });
-  html += "</ul>"
+  html += "</ul></div></div>"
   otherAns.innerHTML = html;
+  id++;
 }
+
+
+
 
 </script>
 
