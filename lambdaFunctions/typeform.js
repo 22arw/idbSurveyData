@@ -38,7 +38,7 @@ exports.handler = function(event, context, callback) {
 
   getUrl(typeformURL).then((rawData) => { 
     const data = JSON.parse(rawData)
-    console.log(data)
+    // console.log(data)
 
     callback(null, {
         statusCode: 200,
