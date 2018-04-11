@@ -36,27 +36,26 @@ Array.prototype.unique = function() {
 
 // Where it all begins!
 $(function() {
-
-    async function getData(url) {
-        const dataset = await $.ajax({
-            type: 'GET',
-            url: url,
-            data: {},
-            success: function(resp){
-                DATA = resp;
-                success(resp);
-            }
-          });
-    }
-
     getData(lambdaURL);
-
-    function success(resp) {
-        console.log('Response received from typeform.');
-        DATA = JSON.parse(resp);
-        begin();
-    }
 });
+
+async function getData(url) {
+    const dataset = await $.ajax({
+        type: 'GET',
+        url: url,
+        data: {},
+        success: function(resp){
+            DATA = resp;
+            success(resp);
+        }
+      });
+}
+
+function success(resp) {
+    console.log('Response received from typeform.');
+    DATA = JSON.parse(resp);
+    begin();
+}
 
 const get = {
     totalResponses: () => {
@@ -218,15 +217,15 @@ const get = {
 }
 
 function begin() {
-    console.log('the number of items: ' + get.totalResponses());
-    console.log('Q1: ' + get.q1AnswerChoices());
-    console.log('Q2: ' + get.q2AnswerChoices());
-    console.log('Q3: ' + get.q3AnswerChoices());
-    console.log('Q4: ' + get.q4AnswerChoices());
-    console.log('Q1 answer count: ' + get.q1AnswerCount());
-    console.log('Q2 answer count: ' + get.q2AnswerCount());
-    console.log('Q3 answer count: ' + get.q3AnswerCount());
-    console.log('Q4 answer count: ' + get.q4AnswerCount());
+    // console.log('the number of items: ' + get.totalResponses());
+    // console.log('Q1: ' + get.q1AnswerChoices());
+    // console.log('Q2: ' + get.q2AnswerChoices());
+    // console.log('Q3: ' + get.q3AnswerChoices());
+    // console.log('Q4: ' + get.q4AnswerChoices());
+    // console.log('Q1 answer count: ' + get.q1AnswerCount());
+    // console.log('Q2 answer count: ' + get.q2AnswerCount());
+    // console.log('Q3 answer count: ' + get.q3AnswerCount());
+    // console.log('Q4 answer count: ' + get.q4AnswerCount());
 
     q1Chart();
     q2Chart();
