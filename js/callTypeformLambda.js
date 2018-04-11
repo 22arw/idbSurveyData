@@ -298,3 +298,11 @@ function setHeaderData() {
     let headerDataText = '<p>Survey Responses: ';
     document.getElementById('headerData').innerHTML = headerDataText + get.totalResponses() + '</p>';
 }
+
+function reloadData() {
+    let since = document.getElementById('dateFrom').value + "T00%3A00%3A00";
+    let until = document.getElementById('dateTo').value + "T00%3A00%3A00";
+
+    let url = lambdaURL + "?since=" + since + "&until=" + until;
+    getData(url);
+}

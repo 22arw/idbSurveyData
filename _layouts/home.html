@@ -3,19 +3,29 @@ layout: default
 ---
 
 <div class="home">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p style="display: inline-block">From: <input type="text" id="dateFrom"></p>&nbsp;
+                <p style="display: inline-block">To: <input type="text" id="dateTo"></p>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" onclick="reloadData()">Reload!</button>
+            </div>
+        </div>
+    </div>
     <div id="headerData"></div>
 
-  <canvas id="q1"></canvas>
-  <div id='q1Other'></div>
-  <br><br><br><hr><br><br><br>
-  <canvas id="q2"></canvas>
-  <br><br><br><hr><br><br><br>
-  <canvas id="q3"></canvas>
-  <div id='q3Other'></div>
-  <br><br><br><hr><br><br><br>
-  <canvas id="q4"></canvas>
-  <div id='q4Other'></div>
-  <br><br><br><hr><br><br><br>
+    <canvas id="q1"></canvas>
+    <div id='q1Other'></div>
+    <br><br><br><hr><br><br><br>
+    <canvas id="q2"></canvas>
+    <br><br><br><hr><br><br><br>
+    <canvas id="q3"></canvas>
+    <div id='q3Other'></div>
+    <br><br><br><hr><br><br><br>
+    <canvas id="q4"></canvas>
+    <div id='q4Other'></div>
+    <br><br><br><hr><br><br><br>
 
 </div>
 
@@ -28,7 +38,6 @@ layout: default
         var TOTAL = get.totalResponses();
         var LABELS = get.q1AnswerChoices();
         var DATASET = q.count(1);
-        // var OTHER = q.other(1);
 
         var myChart = new Chart(ctx, {
             type: 'horizontalBar',
@@ -66,7 +75,6 @@ function addOther(OTHER) {
     <div class="collapse" id="other${id}">
         <div class="card card-body">
             <ul>`
-//   let html = "<h3>Other Responses:</h3><ul>";
   OTHER.forEach((el) => {
     html += "<li>\"" + el + "\"</li>";
   });
@@ -122,7 +130,6 @@ function addOther(OTHER) {
 
         LABELS = get.q3AnswerChoices();
         DATASET = q.count(3);
-        // OTHER = q.other(3);
 
         var myChart3 = new Chart(ctx, {
             type: 'horizontalBar',
@@ -159,7 +166,6 @@ function addOther(OTHER) {
 
         LABELS = get.q4AnswerChoices();
         DATASET = q.count(4);
-        // OTHER = q.other(4);
 
         var myChart4 = new Chart(ctx, {
             type: 'horizontalBar',

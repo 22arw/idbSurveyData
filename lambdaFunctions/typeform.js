@@ -9,6 +9,7 @@ var typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size +
 
 exports.handler = function(event, context, callback) {
 
+  console.log("since: " + context.parse)
 
   console.log(typeformURL);
 
