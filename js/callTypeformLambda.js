@@ -226,7 +226,7 @@ function begin() {
     // console.log('Q2 answer count: ' + get.q2AnswerCount());
     // console.log('Q3 answer count: ' + get.q3AnswerCount());
     // console.log('Q4 answer count: ' + get.q4AnswerCount());
-
+    setChartHolder();
     q1Chart();
     q2Chart();
     q3Chart();
