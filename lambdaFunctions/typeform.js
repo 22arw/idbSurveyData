@@ -2,7 +2,7 @@ const https = require('https');
 
 var baseURL = 'https://api.typeform.com/';
 var formID = 'ue4FsQ';
-var accessToken = 'CuAPnXc9Lb5KuqdqPLbTETRmitNHXEP6tUV8VWW38HqA';
+var accessToken = 'GYdquHNdQiicaP15jFJ1MHWXMtZrfJeEg57DV8Vgny66';
 var page_size = 'page_size=1000';
 var typeformURL;
 
