@@ -304,17 +304,32 @@ function reloadData() {
 
     let url = lambdaURL + "?since=" + since + "&until=" + until;
 
-    clearCharts();
+    setChartHolder();
     getData(url);
 }
 
-function clearCharts() {
-    document.getElementById('q1').innerText = '';
-    document.getElementById('q1Other').innerText = '';
-    document.getElementById('q2').innerText = '';
-    // document.getElementById('q2Other').innerText = '';
-    document.getElementById('q3').innerText = '';
-    document.getElementById('q3Other').innerHTML = '';
-    document.getElementById('q4').innerText = '';
-    document.getElementById('q4Other').innerText = '';
+// function clearCharts() {
+//     document.getElementById('q1').innerText = '';
+//     document.getElementById('q1Other').innerText = '';
+//     document.getElementById('q2').innerText = '';
+//     // document.getElementById('q2Other').innerText = '';
+//     document.getElementById('q3').innerText = '';
+//     document.getElementById('q3Other').innerHTML = '';
+//     document.getElementById('q4').innerText = '';
+//     document.getElementById('q4Other').innerText = '';
+// }
+
+function setChartHolder() {
+    document.getElementById('chartHolder').innerHTML = '';
+    document.getElementById('chartHolder').innerHTML = `<canvas id="q1"></canvas>
+    <div id='q1Other'></div>
+    <br><br><br><hr><br><br><br>
+    <canvas id="q2"></canvas>
+    <br><br><br><hr><br><br><br>
+    <canvas id="q3"></canvas>
+    <div id='q3Other'></div>
+    <br><br><br><hr><br><br><br>
+    <canvas id="q4"></canvas>
+    <div id='q4Other'></div>
+    <br><br><br><hr><br><br><br>`;
 }
