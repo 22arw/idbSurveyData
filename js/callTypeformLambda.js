@@ -330,7 +330,7 @@ function setChartHolder() {
 }
 
 function validateInputs(since, until) {
-    if (since.charAt(0) == 'T' || until.charAt(0) == 'T' || moment(until).isBefore(since)) {
+    if (since.charAt(0) == 'T' || until.charAt(0) == 'T') {
         return false;
     } else {
         return true;
