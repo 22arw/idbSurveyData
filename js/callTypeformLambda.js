@@ -303,5 +303,18 @@ function reloadData() {
     let until = document.getElementById('dateTo').value + "T00%3A00%3A00";
 
     let url = lambdaURL + "?since=" + since + "&until=" + until;
+    
+    clearCharts();
     getData(url);
+}
+
+function clearCharts() {
+    document.getElementById('q1').innerHTML = '';
+    document.getElementById('q1Other').innerHTML = '';
+    document.getElementById('q2').innerHTML = '';
+    document.getElementById('q2Other').innerHTML = '';
+    document.getElementById('q3').innerHTML = '';
+    // document.getElementById('q3Other').innerHTML = '';
+    document.getElementById('q4').innerHTML = '';
+    document.getElementById('q4Other').innerHTML = '';
 }
