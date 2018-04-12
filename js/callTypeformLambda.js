@@ -302,22 +302,14 @@ function reloadData() {
     let since = document.getElementById('dateFrom').value + "T00%3A00%3A00";
     let until = document.getElementById('dateTo').value + "T00%3A00%3A00";
 
-    let url = lambdaURL + "?since=" + since + "&until=" + until;
+    if (validateInputs(since, until)) {
+        let url = lambdaURL + "?since=" + since + "&until=" + until;
+    }
 
     setChartHolder();
     getData(url);
 }
 
-// function clearCharts() {
-//     document.getElementById('q1').innerText = '';
-//     document.getElementById('q1Other').innerText = '';
-//     document.getElementById('q2').innerText = '';
-//     // document.getElementById('q2Other').innerText = '';
-//     document.getElementById('q3').innerText = '';
-//     document.getElementById('q3Other').innerHTML = '';
-//     document.getElementById('q4').innerText = '';
-//     document.getElementById('q4Other').innerText = '';
-// }
 
 function setChartHolder() {
     document.getElementById('chartHolder').innerHTML = '';
@@ -332,4 +324,12 @@ function setChartHolder() {
     <canvas id="q4"></canvas>
     <div id='q4Other'></div>
     <br><br><br><hr><br><br><br>`;
+}
+
+function validateInputs(since, until) {
+    if (since.charAt(0) == 'T' || until.charAt(0) == 'T' || moment(until).isBefore(since)) {
+        return false;
+    } else {
+        return true;
+    }
 }
