@@ -301,11 +301,12 @@ function setHeaderData() {
 function reloadData() {
     let since = document.getElementById('dateFrom').value + "T00%3A00%3A00";
     let until = document.getElementById('dateTo').value + "T00%3A00%3A00";
+    let url = '';
 
     if (validateInputs(since, until)) {
-        let url = lambdaURL + "?since=" + since + "&until=" + until;
+        url = lambdaURL + "?since=" + since + "&until=" + until;
     } else {
-        let url = lambdaURL;
+        url = lambdaURL;
     }
 
     setChartHolder();
