@@ -14,6 +14,8 @@ exports.handler = function(event, context, callback) {
     let since = event.queryStringParameters.since;
     let until = event.queryStringParameters.until;
     typeformURL += typeformBaseURL + "&since=" + since + "&until=" + until;
+  } else {
+    typeformURL = typeformBaseURL;
   }
 
   console.log(typeformURL);
