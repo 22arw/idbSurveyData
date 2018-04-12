@@ -10,7 +10,9 @@ var typeformURL = baseURL + 'forms/' + formID + '/responses' + '?' + page_size +
 exports.handler = function(event, context, callback) {
 
   if (event.queryStringParameters.since != undefined && event.queryStringParameters.until != undefined) {
-    console.log("since: " + event.queryStringParameters.since);
+    let since = event.queryStringParameters.since;
+    let until = event.queryStringParameters.until;
+    typeformURL += "&since=" + since + "&until=" + until;
   }
 
   console.log(typeformURL);
