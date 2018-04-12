@@ -4,7 +4,7 @@ var baseURL = 'https://api.typeform.com/';
 var formID = 'ue4FsQ';
 var accessToken = 'GYdquHNdQiicaP15jFJ1MHWXMtZrfJeEg57DV8Vgny66';
 var page_size = 'page_size=1000';
-var typeformURL;
+var typeformURL = '';
 
 const typeformBaseURL = baseURL + 'forms/' + formID + '/responses?' + page_size + '&completed=true';
 
@@ -13,7 +13,7 @@ exports.handler = function(event, context, callback) {
   if (event.queryStringParameters.since != undefined && event.queryStringParameters.until != undefined) {
     let since = event.queryStringParameters.since;
     let until = event.queryStringParameters.until;
-    typeformURL += typeformBaseURL + "&since=" + since + "&until=" + until;
+    typeformURL = typeformBaseURL + "&since=" + since + "&until=" + until;
   } else {
     typeformURL = typeformBaseURL;
   }
