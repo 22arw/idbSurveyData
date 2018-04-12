@@ -304,6 +304,8 @@ function reloadData() {
 
     if (validateInputs(since, until)) {
         let url = lambdaURL + "?since=" + since + "&until=" + until;
+    } else {
+        let url = lambdaURL;
     }
 
     setChartHolder();
