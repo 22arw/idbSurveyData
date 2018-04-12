@@ -312,9 +312,9 @@ function clearCharts() {
     document.getElementById('q1').innerText = '';
     document.getElementById('q1Other').innerText = '';
     document.getElementById('q2').innerText = '';
-    document.getElementById('q2Other').innerText = '';
+    // document.getElementById('q2Other').innerText = '';
     document.getElementById('q3').innerText = '';
-    // document.getElementById('q3Other').innerHTML = '';
+    document.getElementById('q3Other').innerHTML = '';
     document.getElementById('q4').innerText = '';
     document.getElementById('q4Other').innerText = '';
 }
